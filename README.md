@@ -80,6 +80,7 @@ Refer to the module [schematics](https://github.com/OpenRTX/sa8x8-fw/files/12232
 
 ### T-TWR Plus
 按照这个部分，用“rl78flash -m 3 -b 115200 -a -v /dev/ttyACM3 sa8x8-fw-sa868s-uhf.s37”的命令（https://github.com/msalau/rl78flash），给open版本的s868 vhf模块刷基带。刷完以后，再用uf2的方式，刷openrtx（先刷基础bin文件【https://openrtx.org/#/hardware/ttwrplus 】，再在U盘里面拖入最新的openrtx的uf2文件【openrtx_ttwrplus.uf2 692 KiB 2025/7/13 18:05:32	】https://files.openrtx.org/nightly/  ）。再刷https://github.com/nakhonthai/ESP32APRS_T-TWR  ， 这个0.4或者0.5版本。注意刷完要在radio里面，选择正确的模块为8x8_open版本，不然无线依旧没有信号。
+如果碰到不断重启，可能就是基带模块没有正确定位。临时方案是重刷一次0.5版本，就可以解决一段时间。
 The [T-TWR Plus](https://www.lilygo.cc/products/t-twr-plus) is a complete portable radio design using SA868S modules. The programming procedure for these devices is very similar to the one described above. The programming interface is exposed through a 4-pin JST SH-1.0 (1mm pitch) connector labeled **CN4** in the [schematic](https://github.com/Xinyuan-LilyGO/T-TWR/blob/master/schematic/T-TWR-Plus_Rev2.0.pdf). The connector is located on the rear of the board along the right edge, between the NeoPixel LED and a similar looking connector. The pin map is as follows, from top to bottom:
 
 | Pin number | Silkscreen label | Function      |
