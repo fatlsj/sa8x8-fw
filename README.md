@@ -79,7 +79,7 @@ Refer to the module [schematics](https://github.com/OpenRTX/sa8x8-fw/files/12232
 **Note:** When possible, use spring-loaded pins (pogo pins) to program these modules. Programming pads are prone to shearing off when wires soldered to the pads are under strain. The pitch of the pads is 2mm.
 
 ### T-TWR Plus
-
+按照这个部分，用“rl78flash -m 3 -b 115200 -a -v /dev/ttyACM3 sa8x8-fw-sa868s-uhf.s37”的命令，给open版本的s868 vhf模块刷基带。刷完以后，再用uf2的方式，刷openrtx。再刷https://github.com/nakhonthai/ESP32APRS_T-TWR，这个0.4或者0.5版本。注意刷完要在radio里面，选择正确的模块为8x8_open版本，不然无线依旧没有信号。
 The [T-TWR Plus](https://www.lilygo.cc/products/t-twr-plus) is a complete portable radio design using SA868S modules. The programming procedure for these devices is very similar to the one described above. The programming interface is exposed through a 4-pin JST SH-1.0 (1mm pitch) connector labeled **CN4** in the [schematic](https://github.com/Xinyuan-LilyGO/T-TWR/blob/master/schematic/T-TWR-Plus_Rev2.0.pdf). The connector is located on the rear of the board along the right edge, between the NeoPixel LED and a similar looking connector. The pin map is as follows, from top to bottom:
 
 | Pin number | Silkscreen label | Function      |
